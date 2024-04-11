@@ -1,5 +1,5 @@
 [ubuntu]
-BUNSERVER ansible_host=10.32.36.162
+BUNSERVER ansible_host=10.32.36.179
 
 [win]
 T932PC01 ansible_host=10.32.36.101
