@@ -1,0 +1,18 @@
+---
+- name: Reboot selected Windows PCs
+  hosts: win
+  gather_facts: no
+  serial: 1  # Executes tasks on hosts one at a time
+  vars_prompt:
+    - name: reboot_input
+      prompt: "Which PCs should be rebooted (comma-separated list(No spaces), e.g., T932PC01,T932PC02)?"
+      private: false
+
+  tasks:
+    - name: Debug reboot_input variable
+      debug:
+        var: reboot_input
+
+    - name: Reboot selected PCs
+      ansible.windows.win_reboot:
+      when: inventory_hostname in reboot_input.split(',')

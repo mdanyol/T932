@@ -1,0 +1,6 @@
+- name: Make folder in Classroom PCs and store file in new folder
+  hosts: win
+  gather_facts: no  # We don't need to gather facts
+  tasks:
+    - name: Reboot the machine with all defaults
+      ansible.windows.win_reboot:

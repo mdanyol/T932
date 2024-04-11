@@ -1,0 +1,12 @@
+- name: Make folder in Classroom PCs and store file in new folder
+  hosts: win
+  gather_facts: no  # We don't need to gather facts
+  tasks:
+    - name: Create folder in D drive
+      ansible.windows.win_file:
+        path: D:\Software
+        state: directory
+    - name: Export file over from Controller
+      ansible.windows.win_copy:
+        src: /home/student/ansible/hosts1.txt
+        dest: D:\Software\hosts1.txt

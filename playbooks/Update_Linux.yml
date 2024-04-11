@@ -1,0 +1,17 @@
+---
+- name: Update Linux hosts
+  hosts: ubuntu
+  become: yes
+
+  tasks:
+    - name: Update package cache
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Upgrade all packages
+      ansible.builtin.apt:
+        upgrade: yes
+
+    - name: Run the equivalent of "apt-get clean" as a separate step
+      apt:
+        clean: yes

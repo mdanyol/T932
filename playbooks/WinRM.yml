@@ -1,0 +1,9 @@
+---
+- name: Ensure WinRM service is set to start automatically
+  hosts: win
+  gather_facts: no
+  tasks:
+    - name: Set WinRM service to start automatically
+      ansible.windows.win_service:
+        name: winrm
+        start_mode: auto

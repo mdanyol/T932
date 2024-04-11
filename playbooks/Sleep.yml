@@ -1,0 +1,12 @@
+---
+- name: Set sleep timing for Windows devices
+  hosts: win
+  gather_facts: no  # We don't need to gather facts in this playbook
+
+  tasks:
+    - name: Set sleep timing
+      win_shell: |
+        # Set sleep timer to 60 minutes
+        powercfg -change -standby-timeout-ac 60
+
+      # You can add a condition here to limit the execution to specific devices if needed

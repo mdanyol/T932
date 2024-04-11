@@ -1,0 +1,10 @@
+---
+- name: Shutdown all Windows devices
+  hosts: win
+  gather_facts: no  # We don't need to gather facts in this playbook
+
+  tasks:
+    - name: Shutdown Windows devices
+      win_shell: shutdown /s /t 0
+
+      # You can add a condition here to limit the execution to specific devices if needed
