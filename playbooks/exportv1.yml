@@ -25,5 +25,5 @@
 
     - name: Export file over from Controller
       ansible.windows.win_copy:
-        src: /home/administrator/ToPush/ET0709LabFiles
+        src: /home/administrator/ToPush/ET0709LabFiles/
         dest: D:\

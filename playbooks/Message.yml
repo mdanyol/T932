@@ -1,0 +1,7 @@
+---
+- name: Send message to PCs
+  hosts: win
+  tasks:
+    - name: Send message
+      ansible.windows.win_msg:
+        msg: "This is a test message from Ansible."
