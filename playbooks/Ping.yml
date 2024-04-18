@@ -1,4 +1,4 @@
-- name: Enable firewall
+- name: Ping
   hosts: win
   gather_facts: no  # We don't need to gather facts
   tasks:

@@ -2,11 +2,11 @@
 BUNSERVER ansible_host=10.32.36.179
 
 [win]
-T932PC01 ansible_host=10.32.36.101
-T932PC02 ansible_host=10.32.36.102
-T932PC03 ansible_host=10.32.36.103
-T932PC04 ansible_host=10.32.36.104
-T932PC05 ansible_host=10.32.36.105
+T932PC01 ansible_host=10.32.36.60
+T932PC02 ansible_host=10.32.36.79
+T932PC03 ansible_host=10.32.36.53
+T932PC04 ansible_host=10.32.36.162
+T932PC05 ansible_host=10.32.36.128
 T932PC06 ansible_host=10.32.36.106
 T932PC07 ansible_host=10.32.36.107
 T932PC08 ansible_host=10.32.36.108
