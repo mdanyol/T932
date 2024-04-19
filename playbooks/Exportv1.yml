@@ -2,28 +2,7 @@
   hosts: win
   gather_facts: no  # We don't need to gather facts
   tasks:
-
-    - name: Remove Software folder
-      ansible.windows.win_file:
-        path: D:\Software
-        state: absent
-
-    - name: Remove ISO folder
-      ansible.windows.win_file:
-        path: D:\iso
-        state: absent
-
-    - name: Remove Practical folder
-      ansible.windows.win_file:
-        path: D:\Practical
-        state: absent
-
-    - name: Remove Trace files folder
-      ansible.windows.win_file:
-        path: D:\Trace files
-        state: absent
-
     - name: Export file over from Controller
       ansible.windows.win_copy:
-        src: /home/administrator/ToPush/ET0709LabFiles/
-        dest: D:\
+        src: /home/administrator/ToPush/kali-linux-2022.2-live-amd64.iso
+        dest: D:\ET0741LabFiles\kali-linux-2022.2-live-amd64.iso 
