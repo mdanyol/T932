@@ -1,0 +1,8 @@
+---
+- name: Untar LAB Test
+  hosts: all
+  become: false
+  tasks:
+  - name: unzip .7z file which is passwOrd eNCRypted
+    ansible.windows.win_command:
+      cmd:'"C:\Program Files\7-Zip\7z.exe" x D:\ET0741LabFiles\NetworkHacking-LTAY24.zip -pP@ssw0rd9321'

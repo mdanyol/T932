@@ -1,0 +1,36 @@
+[win]
+T932PC01 ansible_host=10.32.36.101
+T932PC02 ansible_host=10.32.36.102
+T932PC03 ansible_host=10.32.36.103
+T932PC04 ansible_host=10.32.36.104
+T932PC05 ansible_host=10.32.36.105
+T932PC06 ansible_host=10.32.36.106
+T932PC07 ansible_host=10.32.36.107
+T932PC08 ansible_host=10.32.36.108
+T932PC09 ansible_host=10.32.36.109
+T932PC10 ansible_host=10.32.36.110
+T932PC11 ansible_host=10.32.36.111
+T932PC12 ansible_host=10.32.36.112
+T932PC13 ansible_host=10.32.36.113
+T932PC14 ansible_host=10.32.36.114
+T932PC15 ansible_host=10.32.36.115
+T932PC16 ansible_host=10.32.36.116
+T932PC17 ansible_host=10.32.36.117
+T932PC18 ansible_host=10.32.36.118
+T932PC19 ansible_host=10.32.36.119
+T932PC20 ansible_host=10.32.36.120
+T932PC21 ansible_host=10.32.36.121
+#T932PC22 ansible_host=10.32.36.122
+
+[win:vars]
+ansible_user=administrator
+ansible_password=P@ssw0rd
+ansible_port=5986
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=basic
+
+
+
+
+

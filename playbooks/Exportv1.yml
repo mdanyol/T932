@@ -1,8 +1,8 @@
-- name: Make folder in Classroom PCs and store file in new folder
+- name: Copy directory to Windows PC
   hosts: win
-  gather_facts: no  # We don't need to gather facts
   tasks:
-    - name: Export file over from Controller
+    - name: Copy directory to D: drive
       ansible.windows.win_copy:
-        src: /home/administrator/ToPush/kali-linux-2022.2-live-amd64.iso
-        dest: D:\ET0741LabFiles\kali-linux-2022.2-live-amd64.iso 
+        src: /home/administrator/ToPush/ET0709LabTest1
+        dest: D:\
+        remote_src: yes

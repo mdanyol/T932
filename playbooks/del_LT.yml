@@ -1,0 +1,18 @@
+---
+- name: win_copy
+  hosts: all
+  become: false
+  vars:
+    mydest: 'D:\ET0741LabFiles\NetworkHacking-LTAY24.zip'
+  tasks:
+   - name: delete file
+     win_file:
+      path: "{{mydest}}"
+      state: absent
+
+#   - name: download file
+#     ansible.windows.win_copy:
+##      src: "/home/administrator/ToPush/NetworkHacking-LTAY24.zip"
+#      src: "/mnt/ToShare/NetworkHacking-LTAY24.zip"
+#      dest: "{{ mydest }}"
+
