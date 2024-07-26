@@ -1,0 +1,16 @@
+---
+- name: Wake all Windows devices
+  hosts: win
+  gather_facts: no  # We don't need to gather facts in this playbook
+
+  tasks:
+    - name: Send a magic Wake-on-LAN packet to 00:00:5E:00:53:66
+      community.general.wakeonlan:
+        mac: '00:00:5E:00:53:66'
+        broadcast: 10.32.36.255
+      delegate_to: localhost
+
+    - community.general.wakeonlan:
+        mac: 00:00:5E:00:53:66
+        port: 9
+      delegate_to: localhost

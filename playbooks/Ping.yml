@@ -1,6 +1,23 @@
-- name: Ping
-  hosts: win
-  gather_facts: no  # We don't need to gather facts
+---
+- name: Display time on localhost before executing tasks
+  hosts: localhost
+  gather_facts: no
   tasks:
-    - name: Example from an Ansible Playbook
+    - name: Record and display start time on localhost
+      ansible.builtin.debug:
+        msg: "Start time on localhost: {{ lookup('pipe', 'date') }}"
+
+- name: Ping Windows machines
+  hosts: win
+  gather_facts: no
+  tasks:
+    - name: Ping the Windows machines
       ansible.windows.win_ping:
+
+- name: Display time on localhost after executing tasks
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Record and display end time on localhost
+      ansible.builtin.debug:
+        msg: "End time on localhost: {{ lookup('pipe', 'date') }}"

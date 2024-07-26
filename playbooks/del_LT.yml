@@ -1,8 +1,9 @@
 ---
-- name: win_copy
+- name: Delete Labtest ZIP
   hosts: all
-  become: false
+  become: False
   vars:
+    myfolder: 'D:\ET0741LabFiles\NetworkHacking-LTAY24\'
     mydest: 'D:\ET0741LabFiles\NetworkHacking-LTAY24.zip'
   tasks:
    - name: delete file
@@ -10,9 +11,8 @@
       path: "{{mydest}}"
       state: absent
 
-#   - name: download file
-#     ansible.windows.win_copy:
-##      src: "/home/administrator/ToPush/NetworkHacking-LTAY24.zip"
-#      src: "/mnt/ToShare/NetworkHacking-LTAY24.zip"
-#      dest: "{{ mydest }}"
+   - name: Delete Directory
+     ansible.windows.win_file:
+        path: "{{myfolder}}"
+        state: absent
 

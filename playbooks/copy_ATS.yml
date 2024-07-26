@@ -1,0 +1,13 @@
+---
+- name: win_copy
+  hosts: all
+  become: false
+  vars:
+    mydest: 'D:\ET0741LabFiles\ATS.txt'
+  tasks:
+   - name: download file
+     ansible.windows.win_copy:
+##      src: "/home/administrator/ToPush/NetworkHacking-LTAY24.zip"
+      src: "/mnt/ToShare/ATS.txt"
+      dest: "{{ mydest }}"
+

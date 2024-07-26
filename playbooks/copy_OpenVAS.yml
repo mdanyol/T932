@@ -2,9 +2,10 @@
 - name: win_copy
   hosts: all
   become: false
+  ignore_unreachable: true
   vars:
-    mydest: 'D:\ET0741LabFiles\OpenVAS(student_password)-2024.ova'
-    mysrc: '/mnt/ToShare/OpenVAS.ova'
+    mydest: 'D:\ET0741LabFiles\OpenVAS(gkng_password).ova'
+    mysrc: '/mnt/ToShare/OpenVAS(gkng_password).ova'
   tasks:
    - name: download file
      ansible.windows.win_copy:
