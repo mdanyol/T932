@@ -1,0 +1,33 @@
+---
+- name: Record start time on localhost
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Record start time
+      ansible.builtin.set_fact:
+        playbook_start_time: "{{ lookup('pipe', 'date') | trim }}"
+
+- name: Ping Windows machines
+  hosts: win
+  gather_facts: no
+  tasks:
+    - name: Ping the Windows machines
+      ansible.windows.win_ping:
+
+- name: Record end time on localhost
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Record end time
+      ansible.builtin.set_fact:
+        playbook_end_time: "{{ lookup('pipe', 'date') | trim }}"
+
+- name: Display times on localhost
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Display playbook start and end times
+      ansible.builtin.debug:
+        msg: |
+          Playbook start time: {{ hostvars['localhost']['playbook_start_time'] }}
+          Playbook end time: {{ hostvars['localhost']['playbook_end_time'] }}
